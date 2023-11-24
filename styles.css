@@ -1,0 +1,208 @@
+:root {
+  --steel: #b0c4de;
+  --lemon: #adff2f;
+  --fire: #fe2712;
+  --trueblack: #080808;
+}
+
+
+* {
+    padding:0;
+    margin: 0;
+    border: 0;
+  }
+  
+  *, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  :focus, :active {outline: none;}
+  a:focus, a:active {outline: none;}
+  
+  nav, footer, header {display: block;}
+  
+  html, body {
+    height: 100%;    
+    font-size: 100%;
+    font-family: 'Exo 2', sans-serif;
+    color: var(--steel);
+    line-height: 1;     
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  button {font-size: inherit;}
+  
+  button {cursor: pointer;}
+  button ::-moz-focus-inner {padding: 0; border: 0;}
+  a, a:visited {text-decoration: none; color: var(--lemon);}
+  a:hover {text-decoration: none;}
+  ul li {list-style: none;}
+  img {vertical-align: top;}
+  h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: 400;}
+
+  .header {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--trueblack);                 
+                     
+  }
+
+  #logo {
+    width: clamp(24px, 2.5vw, 48px);        
+    margin-left: clamp(24px,2vw, 48px);          
+  }
+
+  .nav {
+    width: 100%;    
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: flex-end;
+    gap: clamp(20px, 10vw, 192px);
+    margin: 0.85rem 1.3rem 0 auto;
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight:bold;                 
+  }
+
+  /* Welcome section */
+
+  .welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;      
+    height: 100dvh;    
+    background: linear-gradient(#08080890 60%, #080808), url(img/bg.jpg) no-repeat center center fixed;
+    background-size: cover;    
+  }
+
+  .welcome-section > h1 {   
+    font-size: clamp(28px, 6vw, 64px);    
+    font-weight: bold;
+    color: var(--steel);       
+  }
+
+  .welcome-section > p {    
+    font-size: clamp(14px, 3vw, 40px);    
+    margin-left: clamp(14px, 3vw, 32px);
+    color: var(--lemon);    
+  }  
+  
+  /* Projects section */
+  
+  .projects-section {    
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--trueblack);    
+  }
+  
+  .projects-section-header {
+    max-width: 40rem;
+    font-size: clamp(18px, 6vw, 58px);
+    margin: 0 auto 10rem auto;     
+    border-bottom: 0.06rem solid var(--lemon);
+    padding-bottom: 0.62rem;
+  }
+    
+  /* "Automagic" image grid using no media queries */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-gap: 4rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+  
+   .code {
+    color: var(--trueblack);
+    transition: color 0.3s ease-out;
+  }
+  
+  .project:hover .code {
+    color: var(--fire);
+  }
+  
+  .project-image {
+    height: calc(100% - 0.5rem);
+    width: clamp(10rem, 30vw, 100%);
+    object-fit: cover;
+  }
+  
+  .project-title {
+    font-size: clamp(14px, 3vw, 24px);
+    padding: 1.5rem;   
+  }
+
+  /* Contact section */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80dvh;
+  padding: 0 2rem;
+  color: var(--steel);
+  background: linear-gradient(180deg, var(--trueblack) 50%, #08080870), url(img/matrix.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.contact-section-header > h2 {
+  font-size: clamp(18px, 6vw, 58px);
+  padding-bottom: 0.68rem;
+}
+
+.contact-section-header > p {
+  font-style: italic;
+  font-size: clamp(12px, 3vw, 24px);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 61.2rem;
+  margin: 4rem auto;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.contact-details {
+  font-size: clamp(14px, 3vw, 32px);
+  text-shadow: 2px 2px 1px var(--steel);
+  transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(0.625rem);
+}
+
+/* Footer */
+
+footer {  
+  font-weight: 300;
+  font-size: clamp(12px, 2vw, 18px);
+  display: flex;
+  justify-content: space-evenly;  
+  background: var(--trueblack);
+  border-top: 0.06rem solid var(--fire);
+}
+
+footer > p {
+  margin: 2rem;
+}
+
+footer i {
+  vertical-align: middle;
+}
